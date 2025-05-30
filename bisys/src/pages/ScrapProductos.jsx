@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./HomeAdmin.css";
-import './Canos.css';
+import './ScrapProductos.css';
 
 const datosMock = [
-  { codigo: "AH24", material: "Acero", aleacion: "Hi-ten", diametro: 24, longitud: 950, stock: 200, minimo: 150 },
-  { codigo: "AH25", material: "Acero", aleacion: "Hi-ten", diametro: 25, longitud: 960, stock: 200, minimo: 150 },
-  { codigo: "AH26", material: "Acero", aleacion: "Hi-ten", diametro: 26, longitud: 980, stock: 300, minimo: 200 },
-  { codigo: "AH27", material: "Acero", aleacion: "Hi-ten", diametro: 27, longitud: 1020, stock: 300, minimo: 200 },
-  { codigo: "AH28", material: "Acero", aleacion: "Hi-ten", diametro: 28, longitud: 1050, stock: 300, minimo: 200 }
+  { fecha: "2025-05-03", numeroOP: 47, producto: "Manubrio", cantidad: 5 },
+  { fecha: "2024-09-25", numeroOP: 18, producto: "Cuadro", cantidad: 20 },
+  { fecha: "2024-09-25", numeroOP: 18, producto: "Cuadro", cantidad: 3 },
+  { fecha: "2024-09-25", numeroOP: 18, producto: "Horquilla", cantidad: 15 },
+  { fecha: "2024-04-10", numeroOP: 1, producto: "Cuadro", cantidad: 10 },
+  { fecha: "2024-04-10", numeroOP: 1, producto: "Horquilla", cantidad: 20 }
 ];
 
-const Canos = () => {
+const ScrapProductos = () => {
   const [filtro, setFiltro] = useState("");
   const [busqueda, setBusqueda] = useState("");
   const [mostrar, setMostrar] = useState(25);
@@ -47,15 +48,20 @@ const Canos = () => {
       </header>
 
       <main>
-        <h2 className="subtitle">Caños</h2>
+        <h2 className="subtitle">Scrap productos</h2>
+
+        <section className="panel-control">
+          <button className="modulo-btn" onClick={() => navigate('/scrap-canos')}>IR A SCRAP CAÑOS</button>
+        </section>
+
+        <p className="subleyenda">Scrap de productos no aprobados por control.</p>
 
         <section className="panel-control">
           <div className="filtro">
             <label>Filtrar por</label>
             <select value={filtro} onChange={(e) => setFiltro(e.target.value)}>
               <option value="">Seleccionar</option>
-              <option value="material">Material</option>
-              <option value="aleacion">Aleación</option>
+              <option value="producto">Producto</option>
             </select>
           </div>
           <div className="busqueda">
@@ -75,37 +81,36 @@ const Canos = () => {
             <button className="negativo" onClick={handleLimpiar}>Limpiar panel</button>
             <button className="positivo">Actualizar tabla</button>
           </div>
-          <button className="historial">Historial de Gestión de Stock</button>
         </section>
 
         <table className="tabla">
           <thead>
             <tr>
-              <th>CÓDIGO</th>
-              <th>MATERIAL</th>
-              <th>ALEACIÓN</th>
-              <th>DIÁMETRO (MM)</th>
-              <th>LONGITUD (MM)</th>
-              <th>STOCK DISPONIBLE</th>
-              <th>NIVEL DE STOCK MÍNIMO</th>
-              <th>GESTIÓN DE STOCK</th>
+              <th>FECHA DE CIERRE OP</th>
+              <th>NÚMERO DE OP</th>
+              <th>PRODUCTO</th>
+              <th>CANTIDAD DESAPROBADA</th>
             </tr>
           </thead>
           <tbody>
             {datosFiltrados.slice(0, mostrar).map((item, index) => (
               <tr key={index}>
-                <td>{item.codigo}</td>
-                <td>{item.material}</td>
-                <td>{item.aleacion}</td>
-                <td>{item.diametro}</td>
-                <td>{item.longitud}</td>
-                <td>{item.stock}</td>
-                <td>{item.minimo}</td>
-                <td><input type="checkbox" /></td>
+                <td>{item.fecha}</td>
+                <td>{item.numeroOP}</td>
+                <td>{item.producto}</td>
+                <td>{item.cantidad}</td>
               </tr>
             ))}
           </tbody>
         </table>
+
+        <div className="paginacion">
+          <button className="btn-paginacion">❮</button>
+          <button className="btn-paginacion numero active">1</button>
+          <button className="btn-paginacion">❯</button>
+        </div>
+
+        <p className="footer-info">Mostrando 1 - {datosFiltrados.length} de {datosFiltrados.length}</p>
       </main>
 
       <footer>
@@ -115,4 +120,4 @@ const Canos = () => {
   );
 };
 
-export default Canos;
+export default ScrapProductos;

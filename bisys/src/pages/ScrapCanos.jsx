@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./HomeAdmin.css";
-import './Canos.css';
+import './ScrapCanos.css';
 
 const datosMock = [
-  { codigo: "AH24", material: "Acero", aleacion: "Hi-ten", diametro: 24, longitud: 950, stock: 200, minimo: 150 },
-  { codigo: "AH25", material: "Acero", aleacion: "Hi-ten", diametro: 25, longitud: 960, stock: 200, minimo: 150 },
-  { codigo: "AH26", material: "Acero", aleacion: "Hi-ten", diametro: 26, longitud: 980, stock: 300, minimo: 200 },
-  { codigo: "AH27", material: "Acero", aleacion: "Hi-ten", diametro: 27, longitud: 1020, stock: 300, minimo: 200 },
-  { codigo: "AH28", material: "Acero", aleacion: "Hi-ten", diametro: 28, longitud: 1050, stock: 300, minimo: 200 }
+  { fecha: "2025-04-23 13:50:50", material: "Acero", peso: 7 },
+  { fecha: "2025-04-23 13:46:05", material: "Acero", peso: 8.01 },
+  { fecha: "2025-04-23 13:36:54", material: "Acero", peso: 17.4 },
+  { fecha: "2024-09-09 11:38:52", material: "Fibra de Carbono", peso: 5 },
+  { fecha: "2024-09-09 11:38:23", material: "Aluminio", peso: 10 },
+  { fecha: "2024-08-06 15:31:43", material: "Acero", peso: 5.5 },
+  { fecha: "2024-08-01 21:11:30", material: "Acero", peso: 15 },
+  { fecha: "2024-08-01 21:11:30", material: "Acero", peso: 30 }
 ];
 
-const Canos = () => {
+const ScrapCanos = () => {
   const [filtro, setFiltro] = useState("");
   const [busqueda, setBusqueda] = useState("");
   const [mostrar, setMostrar] = useState(25);
@@ -47,15 +50,17 @@ const Canos = () => {
       </header>
 
       <main>
-        <h2 className="subtitle">Caños</h2>
+        <h2 className="subtitle">Scrap caños</h2>
 
         <section className="panel-control">
+          <button className="modulo-btn" onClick={() => navigate('/productos')}>IR A SCRAP PRODUCTOS</button>
+          <p className="subleyenda">Generado en el proceso de corte y desbocado.</p>
+
           <div className="filtro">
             <label>Filtrar por</label>
             <select value={filtro} onChange={(e) => setFiltro(e.target.value)}>
               <option value="">Seleccionar</option>
               <option value="material">Material</option>
-              <option value="aleacion">Aleación</option>
             </select>
           </div>
           <div className="busqueda">
@@ -75,37 +80,33 @@ const Canos = () => {
             <button className="negativo" onClick={handleLimpiar}>Limpiar panel</button>
             <button className="positivo">Actualizar tabla</button>
           </div>
-          <button className="historial">Historial de Gestión de Stock</button>
+          <button className="historial">SCRAP CAÑO</button>
         </section>
 
         <table className="tabla">
           <thead>
             <tr>
-              <th>CÓDIGO</th>
+              <th>FECHA</th>
               <th>MATERIAL</th>
-              <th>ALEACIÓN</th>
-              <th>DIÁMETRO (MM)</th>
-              <th>LONGITUD (MM)</th>
-              <th>STOCK DISPONIBLE</th>
-              <th>NIVEL DE STOCK MÍNIMO</th>
-              <th>GESTIÓN DE STOCK</th>
+              <th>PESO(KG)</th>
             </tr>
           </thead>
           <tbody>
             {datosFiltrados.slice(0, mostrar).map((item, index) => (
               <tr key={index}>
-                <td>{item.codigo}</td>
+                <td>{item.fecha}</td>
                 <td>{item.material}</td>
-                <td>{item.aleacion}</td>
-                <td>{item.diametro}</td>
-                <td>{item.longitud}</td>
-                <td>{item.stock}</td>
-                <td>{item.minimo}</td>
-                <td><input type="checkbox" /></td>
+                <td>{item.peso}</td>
               </tr>
             ))}
           </tbody>
         </table>
+
+        <div className="paginacion">
+          <button className="btn-paginacion">❮</button>
+          <button className="btn-paginacion numero active">1</button>
+          <button className="btn-paginacion">❯</button>
+        </div>
       </main>
 
       <footer>
@@ -115,4 +116,4 @@ const Canos = () => {
   );
 };
 
-export default Canos;
+export default ScrapCanos;

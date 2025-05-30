@@ -1,0 +1,129 @@
+/* Subtítulo */
+.subtitle {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: #57b26a;
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.panel-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  background-color: #ecf5d5;
+  padding: 15px 20px;
+  border-bottom: 2px solid #c3d9a3;
+}
+
+.panel-control label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.panel-control select,
+.panel-control input[type="text"] {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.botones-panel {
+  display: flex;
+  gap: 10px;
+}
+
+button.negativo {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.positivo {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.modulo-btn {
+  background-color: #555;
+  color: white;
+  padding: 8px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.modulo-btn:hover {
+  background-color: #333;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.tabla th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla .iconos-accion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+.tabla .iconos-accion i:hover {
+  color: #000;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.btn-paginacion {
+  background-color: #57b26a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-paginacion.numero.active {
+  background-color: #2e7d32;
+}
