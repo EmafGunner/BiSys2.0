@@ -13,8 +13,7 @@ import OrdenProduccion from '../pages/OrdenProduccion';
 import OrdenTrabajo from '../pages/OrdenTrabajo';
 import Reportes from '../pages/Reportes';
 
-import Ingreso from '../pages/Ingreso';
-import IniciarSesion from '../pages/IniciarSesion';
+
 
 
 
@@ -64,8 +63,7 @@ const AppRouter = () => {
 
 
 
-      <Route path="/ingreso" element={<Ingreso />} />
-      <Route path="/login" element={<IniciarSesion />} />
+    
 
 
 
