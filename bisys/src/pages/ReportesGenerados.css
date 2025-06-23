@@ -1,0 +1,81 @@
+/* Estilos para ReportesGenerados */
+
+.subtitle {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: #57b26a;
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.panel-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f0f8dd;
+}
+
+.panel-control select,
+.panel-control input,
+.panel-control button {
+  margin: 0 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.modulo-btn {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.tabla thead {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #f5c87a;
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabla th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  color: #333;
+}
+
+.tabla tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+.tabla .acciones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tabla .acciones i {
+  cursor: pointer;
+  color: #555;
+}
+
+.tabla .acciones i:hover {
+  color: #000;
+}

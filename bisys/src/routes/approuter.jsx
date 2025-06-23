@@ -1,0 +1,71 @@
+import { Routes, Route } from 'react-router-dom';
+
+import Inicio from '../pages/Inicio'; // Importá la nueva página de inicio
+import IniciarSesion from '../pages/IniciarSesion';
+import HomeAdmin from '../pages/HomeAdmin';
+import HomeEncargado from '../pages/HomeEncargado';
+import HomeOperario from '../pages/HomeOperario';
+
+import Canos from '../pages/Canos';
+import Productos from '../pages/Productos';
+import Scrap from '../pages/ScrapSeleccion'; 
+import ScrapCanos from '../pages/ScrapCanos';
+import ScrapProductos from '../pages/ScrapProductos';
+import OrdenProduccion from '../pages/OrdenProduccion';
+import OrdenTrabajo from '../pages/OrdenTrabajo';
+import Reportes from '../pages/Reportes';
+
+import Ingreso from '../pages/Ingreso';
+import IniciarSesion from '../pages/IniciarSesion';
+
+
+
+
+
+
+
+const AppRouter = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Inicio />} />
+      
+      {/* Página de inicio general */}
+      <Route path="/inicio" element={<Inicio />} />
+
+      {/* Página de logueo */}
+      <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+
+      {/* Rutas para cada tipo de usuario */}
+      <Route path="/admin" element={<HomeAdmin />} />
+      <Route path="/encargado" element={<HomeEncargado />} />
+      <Route path="/operario" element={<HomeOperario />} />
+
+      {/* Módulos compartidos */}
+      <Route path="/canos" element={<Canos />} />
+      <Route path="/productos" element={<Productos />} />
+      <Route path="/scrap" element={<Scrap />} />
+      <Route path="/orden-produccion" element={<OrdenProduccion />} />
+      <Route path="/orden-trabajo" element={<OrdenTrabajo />} />
+     
+      <Route path="/scrap-canos" element={<ScrapCanos />} />
+      <Route path="/scrap-productos" element={<ScrapProductos />} />
+
+    
+      <Route path="/reportes" element={<Reportes />} />
+
+
+
+      <Route path="/ingreso" element={<Ingreso />} />
+      <Route path="/login" element={<IniciarSesion />} />
+
+
+
+
+
+  
+
+    </Routes>
+  );
+};
+
+export default AppRouter;
