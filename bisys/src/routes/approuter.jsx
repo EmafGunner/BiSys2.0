@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
+import Inicio from '../pages/Inicio'; // Importá la nueva página de inicio
+import IniciarSesion from '../pages/IniciarSesion';
 import HomeAdmin from '../pages/HomeAdmin';
 import HomeEncargado from '../pages/HomeEncargado';
 import HomeOperario from '../pages/HomeOperario';
@@ -13,35 +15,18 @@ import OrdenProduccion from '../pages/OrdenProduccion';
 import OrdenTrabajo from '../pages/OrdenTrabajo';
 import Reportes from '../pages/Reportes';
 
-
-
-
-
-
-
 const AppRouter = () => {
-  // Más adelante vas a reemplazar este "userType" por uno traído desde la BD o login
-  const userType = 'admin'; // 'operario', 'encargado'
-
-  const renderHome = () => {
-    switch (userType) {
-      case 'admin':
-        return <HomeAdmin />;
-      case 'operario':
-        return <HomeOperario />;
-      case 'encargado':
-        return <HomeEncargado />;
-      default:
-        return <div>Usuario desconocido</div>;
-    }
-  };
-
   return (
     <Routes>
-      {/* Ruta dinámica principal */}
-      <Route path="/" element={renderHome()} />
+      <Route path="/" element={<Inicio />} />
+      
+      {/* Página de inicio general */}
+      <Route path="/inicio" element={<Inicio />} />
 
-      {/* Rutas directas para testeo manual */}
+      {/* Página de logueo */}
+      <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+
+      {/* Rutas para cada tipo de usuario */}
       <Route path="/admin" element={<HomeAdmin />} />
       <Route path="/encargado" element={<HomeEncargado />} />
       <Route path="/operario" element={<HomeOperario />} />
@@ -52,22 +37,9 @@ const AppRouter = () => {
       <Route path="/scrap" element={<Scrap />} />
       <Route path="/orden-produccion" element={<OrdenProduccion />} />
       <Route path="/orden-trabajo" element={<OrdenTrabajo />} />
-     
       <Route path="/scrap-canos" element={<ScrapCanos />} />
       <Route path="/scrap-productos" element={<ScrapProductos />} />
-
-    
       <Route path="/reportes" element={<Reportes />} />
-
-
-
-
-
-
-
-
-  
-
     </Routes>
   );
 };
