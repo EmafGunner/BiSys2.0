@@ -8,34 +8,50 @@
   margin: 0;
 }
 
-.subleyenda {
+.panel-control {
   text-align: center;
-  font-size: 14px;
-  margin: 15px 40px 30px;
-  color: #444;
+  padding: 10px 0;
+  background-color: #f0f8e0;
 }
+
+.subleyenda {
+  font-size: 14px;
+  text-align: center;
+  color: #444;
+  margin: 25px auto 35px;
+  max-width: 900px;
+  line-height: 1.4;
+  display: block;
+}
+
+
 
 .reporte-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 0 30px 40px;
+  padding: 0 60px 40px;
   justify-items: center;
 }
 
 .reporte-card {
   background-color: #ddd;
   border: 2px solid #f5c87a;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 15px;
+  border-radius: 10px;
   font-weight: bold;
+  font-size: 14px;
   text-align: center;
   cursor: pointer;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s ease, background-color 0.2s;
 }
 
 .reporte-card:hover {
   background-color: #c6c6c6;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }

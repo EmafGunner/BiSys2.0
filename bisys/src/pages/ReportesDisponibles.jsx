@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomeAdmin.css';
-import './Reportes.css';
+import './ReportesDisponibles.css';
 
-const Reportes = () => {
+
+const ReportesDisponibles = () => {
   const navigate = useNavigate();
+
 
   const reportes = [
     { texto: 'STOCK DISPONIBLE DE CAÑOS PARA LA PRODUCCIÓN', ruta: '/reporte-stock-canos' },
@@ -16,6 +18,7 @@ const Reportes = () => {
     { texto: 'SCRAP DE PRODUCTOS POR CANTIDAD DESAPROBADA', ruta: '/reporte-scrap-productos' },
     { texto: 'ÓRDENES DE PRODUCCIÓN POR ESTADO', ruta: '/reporte-ordenes-estado' },
   ];
+
 
   return (
     <div className="home-container">
@@ -34,16 +37,26 @@ const Reportes = () => {
             </ul>
           </nav>
         </div>
+        
       </header>
+
+
+
 
       <main>
         <h2 className="subtitle">Reportes disponibles</h2>
 
+        
         <section className="panel-control">
-          <button className="modulo-btn" onClick={() => navigate('/')}>IR A REPORTES GENERADOS</button>
+          <button className="modulo-btn" onClick={() => navigate('/reportes-generados')}>IR A REPORTES GENERADOS</button>
+
         </section>
 
         <p className="subleyenda">Seleccioná un reporte para consultar información clave sobre stock, producción y desempeño. Estos informes están pensados para ayudarte a tomar decisiones basadas en datos reales.</p>
+
+
+        
+
 
         <div className="reporte-grid">
           {reportes.map((r, index) => (
@@ -54,6 +67,7 @@ const Reportes = () => {
         </div>
       </main>
 
+
       <footer>
         <p>© 2024 • BISYS • Desarrollado por G12</p>
       </footer>
@@ -61,5 +75,5 @@ const Reportes = () => {
   );
 };
 
-export default Reportes;
 
+export default ReportesDisponibles;

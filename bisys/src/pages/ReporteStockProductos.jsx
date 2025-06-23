@@ -1,5 +1,5 @@
 const Reportes = () => {
-    return <h1>Página de Reportes</h1>
+    return <h1>Reportes stock productos</h1>
   }
   
   export default Reportes

@@ -11,7 +11,7 @@ const HomeAdmin = () => {
     { nombre: 'Scrap', ruta: '/scrap', img: '/img/Scrap.jpg' },
     { nombre: 'Orden de Producción', ruta: '/orden-produccion', img: '/img/OrdenProduccion.jpg' },
     { nombre: 'Orden de Trabajo', ruta: '/orden-trabajo', img: '/img/OrdenTrabajo.jpg' },
-    { nombre: 'Reportes', ruta: '/reportes', img: '/img/Reportes.png' }
+    { nombre: 'Reportes', ruta: '/reportes-seleccion', img: '/img/Reportes.png' }
   ];
 
   const handleClick = (ruta) => {

@@ -1,0 +1,57 @@
+.reportes-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  min-height: 400px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.reportes-opciones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.reportes-card {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 18px;
+  width: 220px;
+  height: 140px;
+  transition: transform 0.2s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reportes-card:hover {
+  background-color: #388e3c;
+  transform: translateY(-4px);
+}
+
+.reportes-disponibles .reporte-card,
+.reportes-generados .reporte-card {
+  all: unset;
+}

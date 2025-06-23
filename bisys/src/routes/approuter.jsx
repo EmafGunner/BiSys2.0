@@ -11,12 +11,10 @@ import ScrapCanos from '../pages/ScrapCanos';
 import ScrapProductos from '../pages/ScrapProductos';
 import OrdenProduccion from '../pages/OrdenProduccion';
 import OrdenTrabajo from '../pages/OrdenTrabajo';
-import Reportes from '../pages/Reportes';
 
-
-
-
-
+import ReportesSeleccion from '../pages/ReportesSeleccion';
+import ReportesGenerados from '../pages/ReportesGenerados';
+import ReportesDisponibles from '../pages/ReportesDisponibles';
 
 
 
@@ -55,21 +53,19 @@ const AppRouter = () => {
       <Route path="/orden-produccion" element={<OrdenProduccion />} />
       <Route path="/orden-trabajo" element={<OrdenTrabajo />} />
      
+     {/* Módulos compartidos de SCRAP */}
       <Route path="/scrap-canos" element={<ScrapCanos />} />
       <Route path="/scrap-productos" element={<ScrapProductos />} />
 
     
-      <Route path="/reportes" element={<Reportes />} />
+      <Route path="/reportes-seleccion" element={<ReportesSeleccion />} />
+      <Route path="/reportes-generados" element={<ReportesGenerados />} />
+      <Route path="/reportes-disponibles" element={<ReportesDisponibles />} />
+
+      
+      
 
 
-
-    
-
-
-
-
-
-  
 
     </Routes>
   );
