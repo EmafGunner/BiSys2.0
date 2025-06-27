@@ -24,7 +24,7 @@ const ReportesDisponibles = () => {
     <div className="home-container">
       <header className="header">
         <div className="header-left">
-          <img src="/img/logo.png" alt="Logo de Bisys" className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
+          <img src="/img/logo.png" alt="Logo de Bisys" className="logo" onClick={() => navigate('/admin')} style={{ cursor: 'pointer' }} />
         </div>
         <div className="header-center">
           <h1>Bicicletas Enrique</h1>
