@@ -14,7 +14,7 @@ const ScrapSeleccion = () => {
             src="/img/logo.png"
             alt="Logo de Bisys"
             className="logo"
-            onClick={() => navigate("/")}
+            onClick={() => navigate('/admin')}
             style={{ cursor: "pointer" }}
           />
         </div>
