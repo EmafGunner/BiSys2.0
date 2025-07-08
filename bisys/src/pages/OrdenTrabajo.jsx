@@ -46,7 +46,6 @@ const OrdenTrabajo = () => {
           <nav className="nav home">
             <ul>
               <li onClick={() => navigate('/')}>HOME</li>
-              <li>GESTIÓN DE USUARIOS</li>
             </ul>
           </nav>
         </div>

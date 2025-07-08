@@ -39,14 +39,16 @@ const AppRouter = () => {
 
   return (
     <Routes>
+
+      {/* Página principal dinámica */}
+      <Route path="/" element={<Inicio />} />
+
       {/* Página de inicio general */}
-      <Route path="/inicio" element={<Inicio />} />
+      <Route path="/inicio" element={<Inicio />}/>
 
       {/* Página de logueo */}
       <Route path="/iniciar-sesion" element={<IniciarSesion />} />
 
-      {/* Página principal dinámica */}
-      <Route path="/" element={renderHome()} />
 
       {/* Accesos directos a cada tipo de usuario */}
       <Route path="/admin" element={<HomeAdmin />} />
