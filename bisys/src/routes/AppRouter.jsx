@@ -18,6 +18,8 @@ import ReportesSeleccion from '../pages/ReportesSeleccion';
 import ReportesGenerados from '../pages/ReportesGenerados';
 import ReportesDisponibles from '../pages/ReportesDisponibles';
 
+import GestionDeUsuarios from '../pages/GestionDeUsuarios';
+
 const AppRouter = () => {
   // Más adelante vas a reemplazar este "userType" por uno traído desde la BD o login
   const userType = 'admin'; // 'operario', 'encargado'
@@ -64,6 +66,8 @@ const AppRouter = () => {
       <Route path="/reportes-seleccion" element={<ReportesSeleccion />} />
       <Route path="/reportes-generados" element={<ReportesGenerados />} />
       <Route path="/reportes-disponibles" element={<ReportesDisponibles />} />
+
+      <Route path="/GestionDeUsuarios" element={<GestionDeUsuarios />} />
     </Routes>
   );
 };

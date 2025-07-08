@@ -1,0 +1,119 @@
+.gestion-container {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.header-center h1 {
+  color: #a1f56e;
+  font-size: 30px;
+  margin: 0;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.subtitle {
+  background-color: #57b26a;
+  color: black;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.panel-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  background-color: #f0f0f0;
+}
+
+.panel-control select,
+.panel-control input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-add {
+  margin-left: auto;
+  background-color: #eee;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: white;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.acciones button {
+  margin: 0 2px;
+  padding: 5px 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #4CAF50;
+  text-align: center;
+  padding: 15px;
+  color: white;
+}
