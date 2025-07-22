@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Inicio from '../pages/Inicio';
+import Inicio from '../pages/Inicio'; // Importá la nueva página de inicio
 import IniciarSesion from '../pages/IniciarSesion';
 import HomeAdmin from '../pages/HomeAdmin';
 import HomeEncargado from '../pages/HomeEncargado';
@@ -8,7 +8,7 @@ import HomeOperario from '../pages/HomeOperario';
 
 import Canos from '../pages/Canos';
 import Productos from '../pages/Productos';
-import Scrap from '../pages/ScrapSeleccion';
+import Scrap from '../pages/ScrapSeleccion'; 
 import ScrapCanos from '../pages/ScrapCanos';
 import ScrapProductos from '../pages/ScrapProductos';
 import OrdenProduccion from '../pages/OrdenProduccion';
@@ -39,14 +39,14 @@ const AppRouter = () => {
 
   return (
     <Routes>
+      {/* Página principal dinámica */}
+      <Route path="/" element={<Inicio />}/>
+ 
       {/* Página de inicio general */}
       <Route path="/inicio" element={<Inicio />} />
 
       {/* Página de logueo */}
       <Route path="/iniciar-sesion" element={<IniciarSesion />} />
-
-      {/* Página principal dinámica */}
-      <Route path="/" element={renderHome()} />
 
       {/* Accesos directos a cada tipo de usuario */}
       <Route path="/admin" element={<HomeAdmin />} />
