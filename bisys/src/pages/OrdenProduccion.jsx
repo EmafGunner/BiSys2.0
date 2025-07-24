@@ -44,8 +44,10 @@ const OrdenProduccion = () => {
         <div className="header-right">
           <nav className="nav home">
             <ul>
+
               <li onClick={() => navigate('/admin')}>HOME</li>
               <li>GESTIÓN DE USUARIOS</li>
+
             </ul>
           </nav>
         </div>
