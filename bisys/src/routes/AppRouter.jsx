@@ -41,9 +41,9 @@ const AppRouter = () => {
     <Routes>
       {/* Página principal dinámica */}
       <Route path="/" element={<Inicio />}/>
- 
+
       {/* Página de inicio general */}
-      <Route path="/inicio" element={<Inicio />} />
+      <Route path="/inicio" element={<Inicio />}/>
 
       {/* Página de logueo */}
       <Route path="/iniciar-sesion" element={<IniciarSesion />} />
