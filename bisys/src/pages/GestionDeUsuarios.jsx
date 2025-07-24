@@ -19,7 +19,7 @@ const GestionDeUsuarios = () => {
         <div className="header-right">
           <nav className="nav">
             <ul>
-              <li onClick={() => navigate("/")}>HOME</li>
+              <li onClick={() => navigate('/admin')}>HOME</li>
             </ul>
           </nav>
         </div>

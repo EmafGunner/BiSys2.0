@@ -14,7 +14,7 @@ const ReportesSeleccion = () => {
             src="/img/logo.png"
             alt="Logo de Bisys"
             className="logo"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/admin')}
             style={{ cursor: 'pointer' }}
           />
         </div>
@@ -24,7 +24,7 @@ const ReportesSeleccion = () => {
         <div className="header-right">
           <nav className="nav home">
             <ul>
-              <li onClick={() => navigate('/')}>HOME</li>
+              <li onClick={() => navigate('/admin')}>HOME</li>
               <li>GESTIÓN DE USUARIOS</li>
             </ul>
           </nav>
