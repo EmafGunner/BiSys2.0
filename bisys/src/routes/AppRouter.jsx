@@ -39,7 +39,6 @@ const AppRouter = () => {
 
   return (
     <Routes>
-
       {/* Página principal dinámica */}
       <Route path="/" element={<Inicio />} />
 
@@ -48,7 +47,6 @@ const AppRouter = () => {
 
       {/* Página de logueo */}
       <Route path="/iniciar-sesion" element={<IniciarSesion />} />
-
 
       {/* Accesos directos a cada tipo de usuario */}
       <Route path="/admin" element={<HomeAdmin />} />

@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './HomeAdmin.css';
 import './ReportesDisponibles.css';
 
-
 const ReportesDisponibles = () => {
   const navigate = useNavigate();
-
 
   const reportes = [
     { texto: 'STOCK DISPONIBLE DE CAÑOS PARA LA PRODUCCIÓN', ruta: '/reporte-stock-canos' },
@@ -17,8 +15,11 @@ const ReportesDisponibles = () => {
     { texto: 'MOVIMIENTOS DIARIOS DEL STOCK DE PRODUCTOS', ruta: '/reporte-movimientos-productos' },
     { texto: 'SCRAP DE PRODUCTOS POR CANTIDAD DESAPROBADA', ruta: '/reporte-scrap-productos' },
     { texto: 'ÓRDENES DE PRODUCCIÓN POR ESTADO', ruta: '/reporte-ordenes-estado' },
+    { texto: 'ÓRDENES DE TRABAJO POR ESTADO', ruta: '/reporte-ordentrabajo-estado' },
+    { texto: 'CUMPLIMIENTO DE PLAZOS EN OP CERRADAS', ruta: '/reporte-cumplimiento-plazos-op-cerradas' },
+    { texto: 'TENDENCIA DE DEMANDA POR MODELO DE BICICLETA', ruta: '/reporte-demanda-modelo-bicicleta' },
+    { texto: 'TIEMPO PROMEDIO DE FABRICACIÓN DE PRODUCTOS POR OPERARIO', ruta: '/reporte-tiempo-promedio-fabricacion' },
   ];
-
 
   return (
     <div className="home-container">
@@ -39,23 +40,15 @@ const ReportesDisponibles = () => {
         
       </header>
 
-
-
-
       <main>
         <h2 className="subtitle">Reportes disponibles</h2>
-
         
+      <p>Seleccioná un reporte para consultar información clave sobre stock, producción y desempeño. Estos informes están pensados para ayudarte a tomar decisiones basadas en datos reales.</p>
+
         <section className="panel-control">
           <button className="modulo-btn" onClick={() => navigate('/reportes-generados')}>IR A REPORTES GENERADOS</button>
 
         </section>
-
-        <p className="subleyenda">Seleccioná un reporte para consultar información clave sobre stock, producción y desempeño. Estos informes están pensados para ayudarte a tomar decisiones basadas en datos reales.</p>
-
-
-        
-
 
         <div className="reporte-grid">
           {reportes.map((r, index) => (
@@ -66,13 +59,11 @@ const ReportesDisponibles = () => {
         </div>
       </main>
 
-
       <footer>
         <p>© 2024 • BISYS • Desarrollado por G12</p>
       </footer>
     </div>
   );
 };
-
 
 export default ReportesDisponibles;
