@@ -47,7 +47,6 @@ const OrdenTrabajo = () => {
             <ul>
 
               <li onClick={() => navigate('/admin')}>HOME</li>
-              <li>GESTIÓN DE USUARIOS</li>
 
             </ul>
           </nav>
