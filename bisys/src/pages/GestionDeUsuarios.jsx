@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/GestionDeUsuarios.css";
+import RegistrarUsuario from "../components/RegistrarUsuarioButton"; // ajustá la ruta
+// ...
+
 
 const GestionDeUsuarios = () => {
   const navigate = useNavigate();
@@ -48,8 +51,7 @@ const GestionDeUsuarios = () => {
 
           <button className="btn-danger">❌ Limpiar panel</button>
           <button className="btn-success">✅ Actualizar tabla</button>
-
-          <button className="btn-add">👤 Registrar usuario</button>
+          <button className="btn-add" onClick={() => navigate('/registro')}>👤 Registrar usuario</button>
         </div>
 
         <div className="tabla-contenedor">
@@ -91,6 +93,7 @@ const GestionDeUsuarios = () => {
                   <button>❌</button>
                 </td>
               </tr>
+              <RegistrarUsuario />
               {/* Más filas */}
             </tbody>
           </table>
