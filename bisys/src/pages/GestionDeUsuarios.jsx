@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/GestionDeUsuarios.css";
-import RegistrarUsuario from "../components/RegistrarUsuarioButton"; // ajustá la ruta
-// ...
-
+import RegistrarUsuarioButton from "../components/RegistrarUsuarioButton";
 
 const GestionDeUsuarios = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="gestion-container">
       <header className="header">
         <div className="header-left">
-          <img src="/img/logo.png" alt="Logo de Bisys" className="logo" onClick={() => navigate('/admin')} style={{ cursor: 'pointer' }} />
+          <img
+            src="/img/logo.png"
+            alt="Logo de Bisys"
+            className="logo"
+            onClick={() => navigate("/admin")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
 
         <div className="header-center">
@@ -22,7 +27,7 @@ const GestionDeUsuarios = () => {
         <div className="header-right">
           <nav className="nav">
             <ul>
-              <li onClick={() => navigate('/admin')}>HOME</li>
+              <li onClick={() => navigate("/admin")}>HOME</li>
             </ul>
           </nav>
         </div>
@@ -51,7 +56,10 @@ const GestionDeUsuarios = () => {
 
           <button className="btn-danger">❌ Limpiar panel</button>
           <button className="btn-success">✅ Actualizar tabla</button>
-          <button className="btn-add" onClick={() => navigate('/registro')}>👤 Registrar usuario</button>
+          <button className="btn-add" onClick={() => setIsModalOpen(true)}>
+          👤 Registrar usuario
+          </button>
+
         </div>
 
         <div className="tabla-contenedor">
@@ -93,8 +101,6 @@ const GestionDeUsuarios = () => {
                   <button>❌</button>
                 </td>
               </tr>
-              <RegistrarUsuario />
-              {/* Más filas */}
             </tbody>
           </table>
         </div>
@@ -103,6 +109,12 @@ const GestionDeUsuarios = () => {
       <footer>
         <p>© 2024 • BISYS • Desarrollado por G12</p>
       </footer>
+
+      {/* Modal */}
+      <RegistrarUsuarioButton
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

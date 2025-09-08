@@ -5,13 +5,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print("DB_HOST:", os.getenv("DB_HOST"))
+print("DB_PORT:", os.getenv("DB_PORT"))
+
+
 dbconfig = {
-    "host": os.getenv("DB_HOST"),
+    "host": os.getenv("DB_HOST", "127.0.0.1"),
     "port": int(os.getenv("DB_PORT", "3306")),
     "user": os.getenv("DB_USER"),
     "password": os.getenv("DB_PASSWORD"),
     "database": os.getenv("DB_NAME"),
+    "unix_socket": None,                 # 🔴 evita named pipes en Windows
+    "use_pure": True,                    # 🔴 fuerza el driver puro en TCP
+    "auth_plugin": "mysql_native_password"  # 🔴 asegura login clásico
 }
+
 
 pool = pooling.MySQLConnectionPool(pool_name="bisys_pool", pool_size=5, **dbconfig)
 

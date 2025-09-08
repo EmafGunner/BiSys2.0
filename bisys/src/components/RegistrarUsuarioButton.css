@@ -1,0 +1,115 @@
+/* Fondo oscuro */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden; /* 👈 evita barras extra */
+}
+
+/* Caja principal */
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  width: 420px;         /* 👈 ancho fijo */
+  max-width: 95%;       /* 👈 nunca más ancho que pantalla */
+  max-height: 90vh;
+  overflow-y: auto;     /* 👈 solo scroll vertical si hace falta */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.modal-content h3 {
+  margin: 0;
+  padding: 15px;
+  background: #555;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 3px solid #ff6600;
+}
+
+/* Botón cerrar */
+.btn-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Formulario */
+.form-usuario {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.form-usuario input,
+.form-usuario select {
+  width: 100%;          /* 👈 ocupa todo el ancho */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box; /* 👈 evita overflow */
+}
+
+.form-usuario input:focus,
+.form-usuario select:focus {
+  outline: none;
+  border-color: #ff6600;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+/* Botones */
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-cancelar {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-cancelar:hover {
+  background: #e74c3c;
+}
+
+.btn-crear {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-crear:hover {
+  background: #2ecc71;
+}
