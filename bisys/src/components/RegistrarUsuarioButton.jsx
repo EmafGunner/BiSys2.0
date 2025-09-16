@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./RegistrarUsuarioButton.css";
 
-const RegistrarUsuarioButton = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+const RegistrarUsuarioButton = ({ isOpen, onClose, onRegistered }) => {
 
   // estado local para capturar los campos
   const [formData, setFormData] = useState({
@@ -22,12 +21,41 @@ const RegistrarUsuarioButton = ({ isOpen, onClose }) => {
     });
   };
 
-  // manejar submit (después conectamos al back)
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Datos a enviar:", formData);
-    // acá después llamamos al backend
-  };
+  // Conectar el POST desde el modal
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch(
+      "http://127.0.0.1:8000/api/users/registrar?usuario_logueado=27",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data?.detail || "No se pudo registrar el usuario");
+      return;
+    }
+
+    alert("✅ Usuario registrado");
+
+  if (typeof onRegistered === "function") {
+  await onRegistered();   // refresca la tabla
+}
+onClose();                // cierra el modal
+
+  } catch (err) {
+    console.error(err);
+    alert("❌ Error de red al registrar");
+  }
+};
+
 
   return (
     <div className="modal-overlay">

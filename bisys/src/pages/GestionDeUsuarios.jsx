@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";  //  useEffect
 import { useNavigate } from "react-router-dom";
 import "../pages/GestionDeUsuarios.css";
 import RegistrarUsuarioButton from "../components/RegistrarUsuarioButton";
@@ -6,6 +6,23 @@ import RegistrarUsuarioButton from "../components/RegistrarUsuarioButton";
 const GestionDeUsuarios = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+  const [usuarios, setUsuarios] = useState([]);
+
+const cargarUsuarios = async () => {
+  try {
+    const res = await fetch("http://127.0.0.1:8000/api/users?limit=50&offset=0");
+    const data = await res.json();
+    setUsuarios(data?.usuarios || []);
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+useEffect(() => {
+  cargarUsuarios();
+}, []);
 
   return (
     <div className="gestion-container">
@@ -82,41 +99,50 @@ const GestionDeUsuarios = () => {
               </tr>
             </thead>
             <tbody>
-              {/* Simulación de usuarios */}
-              <tr>
-                <td>25123456</td>
-                <td>Alejandro</td>
-                <td>Trapograda</td>
-                <td>DNI</td>
-                <td>25123456</td>
-                <td>alejandro@gmail.com</td>
-                <td>Ingeniero</td>
-                <td>Metalúrgica</td>
-                <td>Administrador</td>
-                <td>Habilitado</td>
-                <td>2024-06-26</td>
-                <td></td>
-                <td className="acciones">
-                  <button>✏️</button>
-                  <button>❌</button>
-                </td>
-              </tr>
-            </tbody>
+  {usuarios.map((u, i) => (
+    <tr key={u.IdUsuario ?? i}>
+      <td>{u.Usuario}</td>
+      <td>{u.Nombre}</td>
+      <td>{u.Apellido}</td>
+      <td>{u.TipoDeDocumento}</td>
+      <td>{u.NumeroDeDocumento}</td>
+      <td>{u.CorreoElectronico}</td>
+      <td>{u.Puesto}</td>  
+      <td>{u.Area}</td>
+      <td>{u.Rol}</td>
+      <td>{u.Estado}</td>
+      <td>{u["Fecha de Registración"] ?? u.FechaDeAlta}</td>
+      <td>{u["Fecha de Baja del Usuario"] ?? u.FechaDeBaja}</td>
+      <td className="acciones">
+        <button>✏️</button>
+        <button>❌</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
           </table>
         </div>
       </main>
 
-      <footer>
-        <p>© 2024 • BISYS • Desarrollado por G12</p>
-      </footer>
+
 
       {/* Modal */}
-      <RegistrarUsuarioButton
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+  
+    {isModalOpen && (
+  <RegistrarUsuarioButton
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    onRegistered={cargarUsuarios}  
+  />
+)}
+
+
     </div>
   );
 };
+      <footer>
+        <p>© 2024 • BISYS • Desarrollado por G12</p>
+      </footer>
 
 export default GestionDeUsuarios;
