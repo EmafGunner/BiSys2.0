@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Inicio from '../pages/Inicio'; // Importá la nueva página de inicio
+import Inicio from '../pages/Inicio'; // Importa la nueva página de inicio
 import IniciarSesion from '../pages/IniciarSesion';
 import HomeAdmin from '../pages/HomeAdmin';
 import HomeEncargado from '../pages/HomeEncargado';
