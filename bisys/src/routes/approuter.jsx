@@ -23,7 +23,7 @@ import IniciarSesion from '../pages/IniciarSesion';
 
 
 const AppRouter = () => {
-  // Más adelante vas a reemplazar este "userType" por uno traído desde la BD o Login - Recordar
+  // Más adelante vas a reemplazar este "userType" por uno traído desde la BD o Login.
   const userType = 'admin'; // 'operario', 'encargado'
 
   const renderHome = () => {
